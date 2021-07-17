@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '../src/components/Box/style.jsx';
 import { MainGrid } from '../src/components/MainGrid/style.jsx';
-import { AlurakutMenu, OrkutNostalgicIconSet, AlurakutProfileSidebarMenuDefault } from '../src/lib/AlurakutCommons.jsx';
+import { AlurakutMenu, OrkutNostalgicIconSet, AlurakutProfileSidebarMenuDefault, AlurakutMenuProfileSidebar } from '../src/lib/AlurakutCommons.jsx';
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations/style.jsx';
 
 function ProfileSideBar(propriedades) {
@@ -19,6 +19,7 @@ function ProfileSideBar(propriedades) {
       <br />
 
       <AlurakutProfileSidebarMenuDefault />
+      {/* <AlurakutMenuProfileSidebar githubUser={propriedades.githubUser} /> */}
     </Box>
   )
 }
@@ -35,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <AlurakutMenu />
+      <AlurakutMenu githubUser={githubUser} />
       <MainGrid>
         <div className="profileArea" style={{ gridArea: 'profileArea' }}>
           <ProfileSideBar githubUser={githubUser} />

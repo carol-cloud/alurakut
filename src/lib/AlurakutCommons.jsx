@@ -99,10 +99,14 @@ AlurakutMenu.Wrapper = styled.header`
     margin: auto;
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 101;
+    top: 0;
+    left: 0;
     @media(min-width: 860px) {
       justify-content: flex-start;
+      position: relative;
     }
     button {
       border: 0;
@@ -162,7 +166,7 @@ AlurakutMenu.Logo = styled.img`
   height: 34px;
 `;
 
-function AlurakutMenuProfileSidebar({ githubUser }) {
+export function AlurakutMenuProfileSidebar({ githubUser }) {
   return (
     <div className="alurakutMenuProfileSidebar">
       <div>

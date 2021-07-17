@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-image: url(${img});
-    background-attachment: scroll;
     background-repeat: no-repeat;
     background-clip: padding-box;
     background-position: center;
