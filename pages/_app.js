@@ -1,5 +1,9 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { AlurakutStyles } from '../src/lib/AlurakutCommons';
+// import img from '../public/assets/background-ww.jpg';
+
+const img = 'https://images8.alphacoders.com/294/thumb-1920-294069.jpg';
+
 const GlobalStyle = createGlobalStyle`
   /* Reset CSS */
   *{
@@ -9,7 +13,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #D9E6F6;
+    background-image: url(${img});
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-position: center;
+    background-size: cover;
     font-family: sans-serif;
   }
 
