@@ -3,6 +3,7 @@ import { Box } from '../src/components/Box/style.jsx';
 import { MainGrid } from '../src/components/MainGrid/style.jsx';
 import { AlurakutMenu, OrkutNostalgicIconSet, AlurakutProfileSidebarMenuDefault, AlurakutMenuProfileSidebar } from '../src/lib/AlurakutCommons.jsx';
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations/style.jsx';
+import { ProfileRelationsBox } from '../src/components/ProfileRelations/index.jsx';
 
 function ProfileSideBar(propriedades) {
   return (
@@ -33,6 +34,16 @@ export default function Home() {
   const githubUser = 'carol-cloud';
   const favoritePeople = ['maykbrito', 'Onnion', 'glaucia86'];
 
+  const [followers, setFollowers] = React.useState([]);
+  React.useEffect(function(){
+    fetch('https://api.github.com/users/carol-cloud/followers')
+    .then((servidorAnswer) => {
+      return servidorAnswer.json();
+    })
+    .then((completeAnswer) => {
+      setFollowers(completeAnswer);
+    })
+  }, [])
 
   return (
     <>
@@ -91,6 +102,7 @@ export default function Home() {
 
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+          <ProfileRelationsBox title="Seguidores" items = {followers} />
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Comunidades ({communities.length})
